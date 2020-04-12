@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to Bakery Narah "
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="90dp"
         android:fontFamily="cursive"
         android:textStyle="bold"
         android:textSize="40dp"
@@ -33,12 +33,12 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="95dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="140dp"
         android:background="@color/colorb"
         android:fontFamily="cursive"
         android:text="GO To Main menu"
         android:textColor="@color/colort"
-        android:textSize="15dp"
+        android:textSize="30dp"
         android:textStyle="bold|italic"
         android:onClick="btg"
         android:id="@+id/btg_onclick">
