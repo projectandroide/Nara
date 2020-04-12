@@ -1,9 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".personal_information">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:gravity="left"
+        android:text="Name"
+        android:layout_marginTop="23dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colortext1"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="77dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:gravity="left"
+        android:text="Address"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/editText"
+        android:textSize="18sp"
+        android:textColor="@color/colortext1"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="77dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="20dp"/>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:gravity="left"
+        android:layout_marginTop="40dp"
+        android:text="ID"
+        android:textColor="@color/colortext1"
+        android:layout_below="@+id/editText2"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="77dp"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:gravity="left"
+        android:text="Pay"
+        android:textColor="@color/colortext1"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/textView3"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RG"
+        android:layout_below="@+id/editText3"
+        android:singleLine="true"
+        android:textColor="@color/colortext1"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:layout_alignParentRight="true">
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cash"
+        android:checked="true"
+        android:textColor="@color/colortext1"
+        android:paddingLeft="2dp"
+        android:layout_alignParentLeft="true"
+        android:textSize="18dp"
+        android:textStyle="bold"
+
+        />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colortext1"
+        android:layout_height="wrap_content"
+        android:text="Credit Card"
+        android:textSize="18dp"
+        android:textStyle="bold"/>
+
+    </RadioGroup>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="23dp"
+        android:gravity="left"
+        android:text="Credit ID"
+        android:textColor="@color/colortext1"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/textView4"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="77dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textView4"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText4"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="77dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Submit"
+android:onClick="btnOnclick"
+        android:textSize="18dp"
+        android:textStyle="bold"></Button>
+</RelativeLayout>
+

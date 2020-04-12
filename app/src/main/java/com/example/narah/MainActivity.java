@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void btg(View view) {
-       // Intent intent= new Intent(this,class name);
-      //    startActivity(intent);
+        Intent intent= new Intent(this,personal_information.class);
+          startActivity(intent);
+
     }
 }
