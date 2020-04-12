@@ -67,7 +67,11 @@ public class personal_information extends AppCompatActivity {
 static int idCount=0;
     public void btnOnclick(View view) {
         String cash,Credit;
+        if(Name.getText().toString().length()==0 || Address.getText().toString().length()==0|| ID.getText().toString().length()==0)
+        {
+            Toast.makeText(this,"You need to fill all text on GUI",Toast.LENGTH_LONG).show();
 
+        }else{
         if ( !Cash.isChecked() && CDID.getText().toString().length()==0){
             Toast.makeText(this,"You need to put money in CD text",Toast.LENGTH_LONG).show();
 
@@ -102,5 +106,5 @@ else{
             Toast.makeText(this,p.getName()+"Done",Toast.LENGTH_LONG).show();
 
         }
-    }
+    }}
 }
