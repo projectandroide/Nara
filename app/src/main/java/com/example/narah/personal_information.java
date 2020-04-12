@@ -11,6 +11,10 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.RadioGroup.OnCheckedChangeListener;
+
+import com.example.narah.personal.Personal;
+import com.google.gson.Gson;
+
 public class personal_information extends AppCompatActivity {
 
 
@@ -60,9 +64,9 @@ public class personal_information extends AppCompatActivity {
             }  });
     }
 
-
+static int idCount=0;
     public void btnOnclick(View view) {
-        String money;
+        String cash,Credit;
 
         if ( !Cash.isChecked() && CDID.getText().toString().length()==0){
             Toast.makeText(this,"You need to put money in CD text",Toast.LENGTH_LONG).show();
@@ -71,24 +75,31 @@ public class personal_information extends AppCompatActivity {
 else{
             SharedPreferences shardpre = getSharedPreferences("personal_data",MODE_PRIVATE);
             SharedPreferences.Editor editor= shardpre.edit();
-            editor.putString("name",Name.getText().toString());
-            editor.putString("address",Address.getText().toString());
-            editor.putString("ID",ID.getText().toString());
             if(Cash.isChecked()) {
-                editor.putString("Pay", "Cash");
-                editor.putString("CreditCard","");
+               cash="cash";
+               Credit="";
             }else{
-                editor.putString("Pay", "Not Cash");
-                editor.putString("CreditCard",CDID.getText().toString());
+                cash="Not Cash";
+                Credit=CDID.getText().toString();
+
 
             }
+            Personal pers = new Personal(Name.getText().toString(),Address.getText().toString(), ID.getText().toString(),Credit,cash);
+//            editor.putString("name",Name.getText().toString());
+//            editor.putString("address",Address.getText().toString());
+//            editor.putString("ID",ID.getText().toString());
+            Gson gson = new Gson();
+
+            editor.putString(""+(++idCount),gson.toJson(pers));
             editor.commit();
 
             SharedPreferences sh =getSharedPreferences(getString(R.string.personal_data),MODE_PRIVATE);
-            String data = sh.getString("name","");
-            data+="   Address "+sh.getString("address","")+ "  ID "+sh.getString("ID","");
-
-            Toast.makeText(this,data+"Done",Toast.LENGTH_LONG).show();
+//            String data = sh.getString("name","");
+//            data+="   Address "+sh.getString("address","")+ "  ID "+sh.getString("ID","");
+            Gson g = new Gson();
+            String per= sh.getString("1","");
+            Personal p = g.fromJson(per,Personal.class);
+            Toast.makeText(this,p.getName()+"Done",Toast.LENGTH_LONG).show();
 
         }
     }
